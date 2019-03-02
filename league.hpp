@@ -8,6 +8,14 @@
 #ifndef LEAGUE_HPP_
 #define LEAGUE_HPP_
 
+namespace League{
+
+class League{
+
+
+};
+
+}
 
 
 
