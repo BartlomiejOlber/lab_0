@@ -8,6 +8,8 @@
 #ifndef LEAGUE_HPP_
 #define LEAGUE_HPP_
 
+#include "team.hpp"
+
 namespace League{
 
 class League{
