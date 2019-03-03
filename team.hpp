@@ -14,14 +14,16 @@ namespace Team {
 
 class Team {
 
-	private:
-		std::string name;
-		int points;
+private:
+	std::string name;
+	int points;
+	int place;
 
-	public:
-		Team(int = 0);
+public:
+	Team(std::string,int = 0, int = 1);
 
-		void game( Team& );
+	void game( Team& );
+	void print();
 
 };
 
