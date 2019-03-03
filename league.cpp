@@ -41,7 +41,7 @@ League::League(int week){
 void League::display_table(){
 	sort( Table.begin( ), Table.end( ), [ ]( const Team::Team& lhs, const Team::Team& rhs )
 	{
-	   return lhs.points < rhs.points;
+	   return lhs.points > rhs.points;
 	});
 	std::vector<Team::Team>::iterator pos;
 	for(pos = Table.begin(); pos!=Table.end(); ++pos){
