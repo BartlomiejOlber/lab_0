@@ -21,9 +21,9 @@ private:
 
 public:
 	League(int = 0);
-	void season_simulate(League&);
-	void gameweek_simulate(League&);
-	void display_table(League&);
+	void round_simulate();
+	void gameweek_simulate();
+	void display_table();
 };
 
 

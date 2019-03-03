@@ -6,23 +6,24 @@
  */
 
 #include <string>
-#include <ctime>
+#include <random>
 #include <iostream>
 #include "team.hpp"
 
 namespace Team{
 
-Team::Team(std::string name_string, int pts, int standing ){
+Team::Team(std::string name_string, int pts){
 
 	points = pts;
-	place = standing;
 	name = name_string;
 }
 
 void Team::game( Team& away){
-	int result = 0;
-	srand(time(0));
-	result = rand()%3;
+
+	std::random_device rd; // obtain a random number from hardware
+	std::mt19937 eng(rd()); // seed the generator
+	std::uniform_int_distribution<> distr(0, 2); // define the range
+	int result = distr(eng);
 	if(!result ){
 		points+=3;
 	}else if(result == 1 ){
@@ -33,7 +34,7 @@ void Team::game( Team& away){
 }
 
 void Team::print(){
-	std::cout << place << ". " << name << " " << points << std::endl;
+	std::cout << name << " " << points << std::endl;
 }
 
 }

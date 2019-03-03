@@ -14,17 +14,15 @@ namespace Team {
 
 class Team {
 
-private:
+public:
 	std::string name;
 	int points;
-	int place;
-
-public:
-	Team(std::string,int = 0, int = 1);
-
+	Team(std::string,int = 0);
 	void game( Team& );
 	void print();
-
+	bool operator > (const Team& other )const{
+		return points>other.points;
+	}
 };
 
 }

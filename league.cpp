@@ -6,6 +6,8 @@
  */
 
 #include <vector>
+#include <string>
+#include <algorithm>
 #include "team.hpp"
 #include "league.hpp"
 
@@ -33,6 +35,28 @@ League::League(int week){
 	Table.push_back(Team::Team("Cardiff"));
 	Table.push_back(Team::Team("Leicester"));
 	Table.push_back(Team::Team("Burnley"));
+
+}
+
+void League::display_table(){
+	sort( Table.begin( ), Table.end( ), [ ]( const Team::Team& lhs, const Team::Team& rhs )
+	{
+	   return lhs.points < rhs.points;
+	});
+	std::vector<Team::Team>::iterator pos;
+	for(pos = Table.begin(); pos!=Table.end(); ++pos){
+		(*pos).print();
+	}
+}
+
+void League::round_simulate(){
+	std::vector<Team::Team>::iterator pos;
+	std::vector<Team::Team>::iterator pos_2;
+	for(pos = Table.begin(); pos!=Table.end(); ++pos){
+		for(pos_2 = pos; pos_2!=Table.end(); ++pos_2){
+			(*pos).game(*pos_2);
+			}
+	}
 
 }
 
