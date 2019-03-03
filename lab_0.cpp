@@ -12,7 +12,6 @@
 using namespace std;
 
 int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	League::League a;
 	a.round_simulate();
 	a.display_table();
