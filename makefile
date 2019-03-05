@@ -1,4 +1,4 @@
-CFLAGS=-c -Wall -g
+CFLAGS=-c -Wall
 
 all::lab_0
 
