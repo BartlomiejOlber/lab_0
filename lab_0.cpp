@@ -12,8 +12,14 @@
 using namespace std;
 
 int main() {
-	League::League a;
-	a.round_simulate();
-	a.display_table();
+	League::League* a = new League::League;
+	Team::Team* stoke = new Team::Team("Stoke");
+	a->round_simulate();
+	std::string derby = "Derby County";
+	if((*stoke = derby)) 
+	   a->display_table();
+	stoke->print();
+	delete stoke; 
+	delete stoke;
 	return 0;
 }

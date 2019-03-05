@@ -23,8 +23,21 @@ public:
 	bool operator > (const Team& other )const{
 		return points>other.points;
 	}
+	bool operator = (int);
+	bool operator = (std::string);
 };
 
+inline bool Team::operator = ( int value ) {
+	
+	name = std::to_string(value);
+	return value;
+}
+
+inline bool Team::operator = (std::string ns){
+
+	name = ns;
+	return 1;
+}
 }
 
 

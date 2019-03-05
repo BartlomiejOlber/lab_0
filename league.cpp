@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 #include <algorithm>
 #include "team.hpp"
 #include "league.hpp"
@@ -44,8 +45,11 @@ void League::display_table(){
 	   return lhs.points > rhs.points;
 	});
 	std::vector<Team::Team>::iterator pos;
-	for(pos = Table.begin(); pos!=Table.end(); ++pos){
+	int i = 1;
+	for( pos = Table.begin(); pos!=Table.end(); ++pos){
+		std::cout<< i << ".";
 		(*pos).print();
+		++i;
 	}
 }
 
